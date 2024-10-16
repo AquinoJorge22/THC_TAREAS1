@@ -1,0 +1,440 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPV9asQdlcDuiqDMOJaKnIT",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/AquinoJorge22/THC_TAREAS1/blob/main/THC_AquinoJorge_Tarea3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "####Ejercicio 1"
+      ],
+      "metadata": {
+        "id": "ocGDIOKf0_5f"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 134,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "TaAxuxbksjZj",
+        "outputId": "8d9f31c0-765d-4b61-b561-4c6fa6d9e9a3"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Calculadora de operaciones básicas\n",
+            "\n",
+            "Primer número:                 1\n",
+            "Operación ( + , - , * , / ):   +\n",
+            "Segundo número:                2\n",
+            "Resultado =  3.0\n"
+          ]
+        }
+      ],
+      "source": [
+        "\n",
+        "print('Calculadora de operaciones básicas\\n')\n",
+        "num1 = float(input('Primer número:                 '))\n",
+        "op = input('Operación ( + , - , * , / ):   ')\n",
+        "num2 = float(input('Segundo número:                '))\n",
+        "\n",
+        "if op == ('+'):\n",
+        "  print('Resultado = ', num1 + num2)\n",
+        "elif op == ('-'):\n",
+        "  print('Resultado = ', num1 - num2)\n",
+        "elif op == ('*'):\n",
+        "  print('Resultado = ', num1 * num2)\n",
+        "elif op == ('/'):\n",
+        "  if num2 == 0:\n",
+        "    print('Operación inválida, no se puede dividir entre 0')\n",
+        "  else:\n",
+        "    print('Resultado = ', num1 / num2)\n",
+        "else:\n",
+        "  print('Operación inválida, por favor seleccione una operacion válida: + , - , * , /')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "####Ejercicio 2"
+      ],
+      "metadata": {
+        "id": "RybmAGAJ1DzQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Convertidor de unidades de temperatura\\n')\n",
+        "uni = input('Elija la unidad de temperatura \\nCelsius = c, Fahrenheit = f, Kelvin = k \\n\\n    ')\n",
+        "t = float(input('\\nTemperatura en la unidad seleccionada\\n\\n   '))\n",
+        "\n",
+        "#formúlas\n",
+        "caf = t*1.8 + 32\n",
+        "cak = t + 273.15\n",
+        "fac = (5*(t-32))/9\n",
+        "fak = fac + 273.15\n",
+        "kac = t-273.15\n",
+        "kaf = kac * 9/5 + 32\n",
+        "\n",
+        "if uni == ('c'):\n",
+        "  print('\\n'+str(t)+'°C es igual a\\n'+str(caf)+'°F y '+str(cak)+'K')\n",
+        "elif uni == ('f'):\n",
+        "  print('\\n'+str(t)+'°F es igual a\\n'+str(fac)+'°C y '+str(fak)+'K')\n",
+        "elif uni == ('k'):\n",
+        "  print('\\n'+str(t)+'K es igual a\\n'+str(kac)+'°C y '+str(kaf)+'°F')"
+      ],
+      "metadata": {
+        "id": "R6qdbWJ3xV_m",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "4c55da5f-5ffc-46c9-fc63-e02d8ffd5cc2"
+      },
+      "execution_count": 135,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Convertidor de unidades de temperatura\n",
+            "\n",
+            "Elija la unidad de temperatura \n",
+            "Celsius = c, Fahrenheit = f, Kelvin = k \n",
+            "\n",
+            "    c\n",
+            "\n",
+            "Temperatura en la unidad seleccionada\n",
+            "\n",
+            "   12\n",
+            "\n",
+            "12.0°C es igual a\n",
+            "53.6°F y 285.15K\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "####Ejercicio 3"
+      ],
+      "metadata": {
+        "id": "jLV95UbaEljf"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "txt = input('Contador de palabras \\nEscriba un texto: \\n')\n",
+        "div = txt.split()\n",
+        "x = len(div)\n",
+        "print('Su texto tiene',x, 'palabras')"
+      ],
+      "metadata": {
+        "id": "6VfSyCA6EoP3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "7f5f9d75-9761-492b-acaf-d9755ad0483a"
+      },
+      "execution_count": 136,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Contador de palabras \n",
+            "Escriba un texto: \n",
+            "cadena de texto\n",
+            "Su texto tiene 3 palabras\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "####Ejercicio 4"
+      ],
+      "metadata": {
+        "id": "wMSSukLglKC-"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "lista1 = input('Calculadora de promedios \\nPor favor escriba las cantidades a promediar separadas por una coma y un espacio (ej: 1, 2, 3) \\n')\n",
+        "nums1 = lista1.split(', ')\n",
+        "suma = 0\n",
+        "for num in nums1:\n",
+        "  suma = suma + float(num)\n",
+        "\n",
+        "div = suma / len(nums1)\n",
+        "print(div)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "gNJHNe3IlIyO",
+        "outputId": "ff7374eb-9a14-44de-d7ed-e03540f7486e"
+      },
+      "execution_count": 139,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Calculadora de promedios \n",
+            "Por favor escriba las cantidades a promediar separadas por una coma y un espacio (ej: 1, 2, 3) \n",
+            "1, 2, 3\n",
+            "2.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#### Ejercicio 5"
+      ],
+      "metadata": {
+        "id": "IRG0jY85_tvO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Programa para crear listas de alumnos, sus calificaciones y su promedio total\\n')\n",
+        "\n",
+        "a=0\n",
+        "lista2 = [] #lista de alumnos\n",
+        "lislis = [] #lista de listas de alumnos\n",
+        "while a < 1:\n",
+        "  nom = input('Ingrese el nombre del alumno, si ha concluido ingrese \"concluido\", EN MINÚSCULAS \\n')\n",
+        "  if nom != 'concluido':\n",
+        "    lista2.append('|| NOMBRE: '+nom+' || ')\n",
+        "    cal = input('Ingrese todas las calificaciones a promediar separadas por una coma (\",\") y sin espacios, ej(1,2,3,4) \\n')\n",
+        "    lista2.append('Calificaciones: '+cal+' || ')\n",
+        "    proms = cal.split(',')         #se calculan los promedios\n",
+        "    suma = 0\n",
+        "    for num in proms:             #se utiliza el programa anterior\n",
+        "      suma = suma + float(num)\n",
+        "    div = suma / len(proms)\n",
+        "    lista2.append('Promedio: '+str(div)+' ||')\n",
+        "    lislis.append(lista2)\n",
+        "    lista2 = [] #reiniciamos la lista\n",
+        "  else:\n",
+        "    a = 2\n",
+        "for i in lislis:\n",
+        "  print(i)\n",
+        "  print(' ')\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "y0cS14Uq2MIO",
+        "outputId": "c677fb54-5f5b-4bab-911b-1ce02d64cc5b"
+      },
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Programa para crear listas de alumnos, sus calificaciones y su promedio total\n",
+            "\n",
+            "Ingrese el nombre del alumno, si ha concluido ingrese \"concluido\", EN MINÚSCULAS \n",
+            "Jorge\n",
+            "Ingrese todas las calificaciones a promediar separadas por una coma (\",\") y sin espacios \n",
+            "9,9,9,10,8\n",
+            "Ingrese el nombre del alumno, si ha concluido ingrese \"concluido\", EN MINÚSCULAS \n",
+            "Santiago\n",
+            "Ingrese todas las calificaciones a promediar separadas por una coma (\",\") y sin espacios \n",
+            "10,9,9,9,8\n",
+            "Ingrese el nombre del alumno, si ha concluido ingrese \"concluido\", EN MINÚSCULAS \n",
+            "Karla\n",
+            "Ingrese todas las calificaciones a promediar separadas por una coma (\",\") y sin espacios \n",
+            "10,8,8,9,10\n",
+            "Ingrese el nombre del alumno, si ha concluido ingrese \"concluido\", EN MINÚSCULAS \n",
+            "concluido\n",
+            "['|| NOMBRE: Jorge || ', 'Calificaciones: 9,9,9,10,8 || ', 'Promedio: 9.0 ||']\n",
+            " \n",
+            "['|| NOMBRE: Santiago || ', 'Calificaciones: 10,9,9,9,8 || ', 'Promedio: 9.0 ||']\n",
+            " \n",
+            "['|| NOMBRE: Karla || ', 'Calificaciones: 10,8,8,9,10 || ', 'Promedio: 9.0 ||']\n",
+            " \n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#### Ejercicio 6"
+      ],
+      "metadata": {
+        "id": "N5addgug_y42"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Programa para calcular el área de un rectángulo') #presentación del programa\n",
+        "b = float(input('Introduzca la base del rectángulo \\n')) #solicitamos la base y altura del rectángulo y los guardamos en variables flotantes\n",
+        "h = float(input('Introduzca la altura \\n'))\n",
+        "print('El área del rectángulo es;',str(b*h)) # imprimimos el área resultante"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-wwfirFy8X7K",
+        "outputId": "a98e691d-515d-45fa-99c1-f6ba9311a760"
+      },
+      "execution_count": 53,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Programa para calcular el área de un rectángulo\n",
+            "Introduzca la base del rectángulo \n",
+            "5\n",
+            "Introduzca la altura \n",
+            "3\n",
+            "El área del rectángulo es; 15.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#### Ejercicio 7"
+      ],
+      "metadata": {
+        "id": "3hbn93ADCYXH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Programa para sacar el índice de masa corporal \\n') #Presentación del programa\n",
+        "kg = float(input('Ingrese su peso en kilogramos ')) #solicitamos la altura y el peso\n",
+        "alt = float(input('Ingrese su altura en metros '))\n",
+        "print('\\nSu peso es: '+str(kg)+' Kg') #imprimimos el peso, la altura y el resultado del IMC\n",
+        "print('Su altura es: '+str(alt)+' m')\n",
+        "print('Y su IMC es: '+str(kg/alt**2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-MlG06JMCXha",
+        "outputId": "2dcbe33e-3847-4209-cfae-6ac742334296"
+      },
+      "execution_count": 62,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Programa para sacar el índice de masa corporal\n",
+            "Ingrese su peso en kilogramos 65\n",
+            "Ingrese su altura en metros 1.70\n",
+            "\n",
+            " Su peso es: 65.0 Kg\n",
+            "Su altura es: 1.7 m\n",
+            "Y su IMC es: 22.49134948096886\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Ejercicio 8"
+      ],
+      "metadata": {
+        "id": "VPwbnxInFB5c"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print('Programa para calcular las calorías que vas consumiendo en el día \\nIngresa las calorías que vayas consumiendo, de una en una \\nAl concluir ingresa \"calcular\", EN MINÚSCULAS ')\n",
+        "a = 0\n",
+        "lista = [] #se crea una lista vacia\n",
+        "while a<1:\n",
+        "  cal = input('\\nCalorias: ')     #se solicitan las calorías\n",
+        "  if cal != 'calcular':\n",
+        "    lista.append(cal)    #se van agregando los valores a la lista\n",
+        "    suma = 0\n",
+        "    for num in lista:             #se hace la sumatoria\n",
+        "      suma = suma + float(num)\n",
+        "  else:\n",
+        "    a=2 #se frena en bucle\n",
+        "    print('Calorías consumidas: '+str(lista))\n",
+        "    print('Total de calorías: '+str(suma))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "sUw8-P6ON4aq",
+        "outputId": "a62aff20-60ea-4eb5-a458-523291988b88"
+      },
+      "execution_count": 84,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Programa para calcular las calorías que vas consumiendo en el día \n",
+            "Ingresa las calorías que vayas consumiendo, de una en una \n",
+            "Al concluir ingresa \"calcular\", EN MINÚSCULAS \n",
+            "\n",
+            "Calorias: 55\n",
+            "\n",
+            "Calorias: 55\n",
+            "\n",
+            "Calorias: calcular\n",
+            "Calorías consumidas: ['55', '55']\n",
+            "Total de calorías: 110.0\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
